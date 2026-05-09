@@ -5,6 +5,7 @@ import { users } from '../test-data/user';
 import { SignupPage } from '../pages/SignupPage';
 import {generateRandomUserAccountInfo} from '../utils/randomdata';
 import {generateRandomUserAddressInfo} from '../utils/randomdata';
+import { verify } from 'node:crypto';
 
 
 
@@ -41,6 +42,8 @@ test.describe('Login with valid user', () => {
         await homePage.deleteAccount();
         await homePage.verifyAccountDeletedAndContinue();
     });
+
+
 
 
 

@@ -10,10 +10,12 @@ export class BasePage {
 
   async click(element: Locator) {
     await element.click();
+
   }
 
   async type(element: Locator, text: string) {
     await element.fill(text);
+  
   }
 
   // check if element is visible

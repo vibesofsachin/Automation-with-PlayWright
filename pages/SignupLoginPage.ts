@@ -8,20 +8,22 @@ export class SignupLoginPage extends BasePage {
     private readonly emailInputforSignup: Locator;
     private readonly signupButton: Locator; 
 
-    private readonly loginForm: Locator;
+    private readonly loginToYourAccount: Locator;
     private readonly emailInputforLogin: Locator;
     private readonly passwordInputforLogin: Locator;
     private readonly loginButton: Locator;
+    private readonly loginError: Locator;
 
     constructor(page: Page) {
         super(page);
 
         //Login form locators
 
-        this.loginForm = page.getByRole('form', { name: 'Login to your account' });
+        this.loginToYourAccount = page.getByRole('form', { name: 'Login to your account' });
         this.emailInputforLogin = page.locator('input[data-qa="login-email"]');
         this.passwordInputforLogin = page.locator('input[data-qa="login-password"]');
         this.loginButton = page.getByRole('button', { name: 'Login' });
+        this.loginError = page.locator("//*[contains(text(),'Your email or password is incorrect!')]")
 
 
         //Signup form locators
@@ -29,6 +31,7 @@ export class SignupLoginPage extends BasePage {
         this.nameInputforSignup = page.getByRole('textbox', { name: 'Name' });
         this.emailInputforSignup = page.locator('input[data-qa="signup-email"]');
         this.signupButton = page.getByRole('button', { name: 'Signup' });
+        
     }
 
     async loginUser(email: string, password: string) {
@@ -47,6 +50,14 @@ export class SignupLoginPage extends BasePage {
         await this.type(this.nameInputforSignup, name);
         await this.type(this.emailInputforSignup, email);
         await this.signupButton.click();
+    }
+
+    async VerifyLoginToYourAccountVerify(){
+        await this.isVisible(this.loginToYourAccount);
+    }
+
+    async verifyErrorMessage(){
+        await this.isVisible(this.loginError);
     }
 
 

@@ -33,11 +33,15 @@ export default defineConfig({
 
     video: 'on',
     screenshot: 'only-on-failure',
+
+    // Global timeout for each test
+    actionTimeout: 1000*60,
+    navigationTimeout: 1000*60, 
     
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: 'https://automationexercise.com/',
 
-        // ✅ maximize browser
+    // maximize browser
     viewport: null,
 
     launchOptions: {
@@ -49,7 +53,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     /* Run tests in headless mode. */
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */

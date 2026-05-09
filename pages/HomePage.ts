@@ -17,6 +17,8 @@ export class HomePage extends BasePage {
     constructor(page: Page) {
         super(page);
         this.homeLink = page.locator('a:has-text("Home")');
+
+        //signUp related locators
         this.signUpLoginLink = page.locator('a:has-text("Signup / Login")');
         this.newUserSignup = page.locator('h2:has-text("New User Signup!")');
         this.nameInputforSignup = page.locator('input[data-qa="signup-name"]');
@@ -26,6 +28,8 @@ export class HomePage extends BasePage {
         this.accountDeletedMessage = page.locator('h2:has-text("Account Deleted!")');
         this.continueButtonAfterAccountDeletion = page.locator('a:has-text("Continue")');
         this.loggedInUserName = page.locator('a:has-text("Logged in as {userName}")');
+
+
 
     }
     async navigateToHomePage() {
@@ -62,6 +66,7 @@ export class HomePage extends BasePage {
     async logOut() {
         await this.logoutLink.click();
     }
+
 
 
 
