@@ -1,4 +1,4 @@
-import { Page,Locator } from "playwright/test";
+import { Page, Locator } from "playwright/test";
 import { BasePage } from "./BasePage";
 
 export class HomePage extends BasePage {
@@ -11,7 +11,10 @@ export class HomePage extends BasePage {
     private readonly deleteAccountLink: Locator;
     private readonly accountDeletedMessage: Locator;
     private readonly continueButtonAfterAccountDeletion: Locator;
-
+    private readonly contactUs: Locator;
+    private readonly testCases: Locator;
+    private readonly products: Locator;
+    private readonly allProducts: Locator;
     private readonly loggedInUserName: Locator;
 
     constructor(page: Page) {
@@ -28,12 +31,14 @@ export class HomePage extends BasePage {
         this.accountDeletedMessage = page.locator('h2:has-text("Account Deleted!")');
         this.continueButtonAfterAccountDeletion = page.locator('a:has-text("Continue")');
         this.loggedInUserName = page.locator('a:has-text("Logged in as {userName}")');
-
-
+        this.contactUs = page.locator("//a[contains(text(),'Contact us')]");
+        this.testCases = page.locator("//*[@href='/test_cases' and contains(text(),'Test Cases')]");
+        this.products = page.locator("//a[@href='/products']")
+        this.allProducts = page.locator("//h2[contains(text(),'All Products')]");
 
     }
     async navigateToHomePage() {
-        await this.open('./');        
+        await this.open('./');
     }
 
     async goToSignupLoginPage() {
@@ -45,7 +50,7 @@ export class HomePage extends BasePage {
     }
 
     async verifylogoutIsVisible() {
-        
+
         await this.logoutLink.isVisible();
     }
 
@@ -67,11 +72,16 @@ export class HomePage extends BasePage {
         await this.logoutLink.click();
     }
 
+    async goToContactUs() {
+        await this.click(this.contactUs);
+    }
 
+    async goToTestCases() {
+        await this.click(this.testCases);
+    }
 
-
-
-    
-
+    async goToProduct() {
+        await this.click(this.products);
+    }
 
 }

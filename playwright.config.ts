@@ -25,7 +25,7 @@ export default defineConfig({
   /* Repeat each test 6 times */
   //repeatEach: 6,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 30,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -35,9 +35,9 @@ export default defineConfig({
     screenshot: 'only-on-failure',
 
     // Global timeout for each test
-    actionTimeout: 1000*60,
-    navigationTimeout: 1000*60, 
-    
+    actionTimeout: 10000 * 60,
+    navigationTimeout: 10000 * 60,
+
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: 'https://automationexercise.com/',
 
@@ -53,13 +53,14 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     /* Run tests in headless mode. */
-    headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium' ,},
+      name: 'chromium',
+    },
 
     // {
     //   name: 'firefox',

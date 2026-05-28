@@ -19,7 +19,7 @@ test.describe("Login with Invalid user",()=>{
         await homePage.verifyHomePageLoaded();
         await homePage.goToSignupLoginPage();
         await loginPage.VerifyLoginToYourAccountVerify();
-        await loginPage.loginUser(users.lockedUser.email,users.lockedUser.password);
+        await loginPage.loginUser(users.InvalidUser.email,users.InvalidUser.password);
         await loginPage.verifyErrorMessage();
 
     })

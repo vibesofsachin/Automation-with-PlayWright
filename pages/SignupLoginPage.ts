@@ -6,7 +6,8 @@ export class SignupLoginPage extends BasePage {
     private readonly newUserSignup: Locator;
     private readonly nameInputforSignup: Locator;
     private readonly emailInputforSignup: Locator;
-    private readonly signupButton: Locator; 
+    private readonly signupButton: Locator;
+    private readonly emailAlreadyExist:Locator;
 
     private readonly loginToYourAccount: Locator;
     private readonly emailInputforLogin: Locator;
@@ -31,6 +32,7 @@ export class SignupLoginPage extends BasePage {
         this.nameInputforSignup = page.getByRole('textbox', { name: 'Name' });
         this.emailInputforSignup = page.locator('input[data-qa="signup-email"]');
         this.signupButton = page.getByRole('button', { name: 'Signup' });
+        this.emailAlreadyExist = page.locator("//*[contains(text(),'Email Address already exist!')]");
         
     }
 
@@ -58,6 +60,10 @@ export class SignupLoginPage extends BasePage {
 
     async verifyErrorMessage(){
         await this.isVisible(this.loginError);
+    }
+
+    async verifyEmailAlreadyExist(){
+        await this.isVisible(this.emailAlreadyExist);
     }
 
 

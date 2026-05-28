@@ -1,13 +1,13 @@
 export const users = {
   validUser: {
-    email: 'Marjorie.Reynolds@gmail.com',
-    password: 'TebnpihBdxh9XvU',
+    email: 'automation.user@infosys.com',
+    password: 'Simple@29',
     name: 'Test User'
   },
 
-  lockedUser: {
+  InvalidUser: {
     email: 'locked@test.com',
     password: 'Locked@123',
-    name: 'Locked User'
+    name: 'Invalid User'
   }
 };
