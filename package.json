@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  "test": "playwright test",
-  "postinstall": "playwright install chromium"
-},
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
