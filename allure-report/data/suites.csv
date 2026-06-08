@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","23282","should load home page successfully","chromium","2026-06-08","passed","2026-06-08","Register User","TC1_RegisterUser.spec.ts","",""
+"","12319","should navigate to signup/login page","chromium","2026-06-08","passed","2026-06-08","Register User","TC1_RegisterUser.spec.ts","",""
+"","13924","register user","chromium","2026-06-08","passed","2026-06-08","Register User","TC1_RegisterUser.spec.ts","",""
+"","10799","should signUp a new user","chromium","2026-06-08","passed","2026-06-08","Register User","TC1_RegisterUser.spec.ts","",""

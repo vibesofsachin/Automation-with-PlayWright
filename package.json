@@ -3,27 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "test": "playwright test",
     "allure:generate": "allure generate ./allure-results --clean -o allure-report",
     "allure:open": "allure open ./allure-report"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
     "allure-commandline": "^2.34.1",
-    "allure-playwright": "^3.4.2"
+    "allure-playwright": "^3.9.0"
   },
-
   "dependencies": {
+    "22": "^0.0.0",
     "@faker-js/faker": "^10.4.0",
-    "country-state-city": "^3.2.1"
+    "country-state-city": "^3.2.1",
+    "nvm": "^0.0.4"
   }
 }
